@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams , Config } from 'ionic-angular';
-import leaflet from 'leaflet';
+import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-properties',
@@ -9,6 +8,7 @@ import leaflet from 'leaflet';
 export class PropertiesPage {
   map;
   markersGroup;
+  viewMode:string;
 
   properties: Array<any> = [
     {
@@ -290,10 +290,12 @@ export class PropertiesPage {
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.viewMode="mode";
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PropertiesPage');
+    this.viewMode="mode";
   }
 
 //   showMap() {

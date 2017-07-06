@@ -1,0 +1,44 @@
+<ion-menu [content]="content">
+
+    <ion-content>
+
+        <img src="assets/img/dreamhouse-logo.svg" class="menu-logo" />
+
+        <ion-list>
+            <ion-list-header class="bar bar-header bar-assertive" id="listHeader">
+                Shop
+            </ion-list-header>
+            <ion-item *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
+                <ion-icon [name]="menuItem.icon" item-start></ion-icon>
+                {{menuItem.title}}
+                <ion-icon name="ios-arrow-forward-outline" item-end style="color:lightgray"></ion-icon>
+            </ion-item>
+        </ion-list>
+
+        <ion-list>
+            <ion-list-header>
+                Help
+            </ion-list-header>
+            <ion-item ion-item *ngFor="let menuItem of helpMenuItems" (click)="openPage(menuItem)">
+                <ion-icon [name]="menuItem.icon" item-start></ion-icon>
+                {{menuItem.title}}
+                <ion-icon name="ios-arrow-forward-outline" item-end style="color:lightgray"></ion-icon>
+            </ion-item>
+        </ion-list>
+
+        <ion-list>
+            <ion-list-header>
+                Account
+            </ion-list-header>
+            <ion-item menuClose ion-item *ngFor="let menuItem of accountMenuItems" (click)="openPage(menuItem)">
+                <ion-icon [name]="menuItem.icon" item-start></ion-icon>
+                {{menuItem.title}}
+                <ion-icon name="ios-arrow-forward-outline" item-end style="color:lightgray"></ion-icon>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

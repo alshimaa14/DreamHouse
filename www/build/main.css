@@ -27536,3 +27536,7 @@ page-home ion-slide img {
 page-home .swiper-pagination-bullet {
   background: white;
 }
+
+page-home #ionContent {
+  margin-right: 0;
+}

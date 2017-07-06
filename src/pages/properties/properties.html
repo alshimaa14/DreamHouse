@@ -6,6 +6,9 @@
 -->
 <ion-header>
     <ion-navbar color="navHeader">
+        <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
         <ion-title>properties</ion-title>
     </ion-navbar>
 </ion-header>
@@ -13,3 +16,14 @@
 <ion-content padding>
 
 </ion-content>
+
+<ion-footer padding>
+    <ion-segment [(ngModel)]="viewMode" color="navHeader">
+        <ion-segment-button value="list" segment-button-ios-background-color-activated="red">
+            <ion-icon name="list"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="map" (ionSelect)="showMap()">
+            <ion-icon name="map"></ion-icon>
+        </ion-segment-button>
+    </ion-segment>
+</ion-footer>
